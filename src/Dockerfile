@@ -17,6 +17,11 @@ RUN wget ${TEXLIVE_MIRROR}/install-tl-unx.tar.gz \
 # latexmkのインストール
 RUN tlmgr install latexmk
 
+RUN curl -L -O  https://raw.githubusercontent.com/h-kitagawa/plistings/master/plistings.sty && \
+    mv plistings.sty /usr/local/texlive/*/texmf-dist/tex/latex/listing && \
+    chmod +r /usr/local/texlive/*/texmf-dist/tex/latex/listing/plistings.sty && \
+    mktexlsr
+
 # GhostscriptとGnuplotをインストール
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
   && apt-get -y install --no-install-recommends ghostscript gnuplot \
