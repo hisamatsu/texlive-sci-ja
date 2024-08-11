@@ -33,7 +33,7 @@ jobs:
         env:
           BUILDX_NO_DEFAULT_ATTESTATIONS: true
         with:
-          imageName: ${{ env.REGISTRY }}/${{ github.repository }}/${{ env.REGISTRY_IMAGE }}
-          cacheFrom: ${{ env.REGISTRY }}/${{ github.repository }}/${{ env.REGISTRY_IMAGE }}
+          imageName: ${{ env.REGISTRY }}/${{ github.repository }}
+          cacheFrom: ${{ env.REGISTRY }}/${{ github.repository }}
           subFolder: ./src
           push: always
