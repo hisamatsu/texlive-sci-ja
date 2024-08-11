@@ -1,7 +1,0 @@
-{
-  "name": "TeX Live",
-  "image": "hisamatsu/texlive-sci-ja:latest",
-  "mounts": [
-    "source=${localWorkspaceFolder}/.devcontainer/.latexmkrc,target=/home/vscode/.latexmkrc,type=bind,consistency=cached"
-  ]
-}
